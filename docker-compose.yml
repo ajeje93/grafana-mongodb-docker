@@ -7,5 +7,6 @@ services:
     restart: always
     volumes:
      - ./data:/var/lib/grafana
+     - /var/lib/grafana/plugins
     ports:
      - 3000:3000
