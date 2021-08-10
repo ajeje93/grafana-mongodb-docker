@@ -1,5 +1,5 @@
 
-name: Publish docker image to GitHub Packages
+name: Publish Docker image to GitHub Packages
 on:
   push:
     branches: [ master ]
