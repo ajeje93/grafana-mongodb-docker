@@ -1,6 +1,6 @@
 FROM node:16-alpine AS node
 
-FROM grafana/grafana
+FROM grafana/grafana:7.5.15
 
 USER root
 
