@@ -6,7 +6,8 @@
 
 ## Credits
 
-Thank to JamesOsgood for creating the plugin <https://github.com/JamesOsgood/mongodb-grafana>. Refer to his repository for the plugin usage.
+Thank to JamesOsgood for creating the plugin <https://github.com/JamesOsgood/mongodb-grafana>.
+Thank to SiemaApplications for upgrading and maintaining the plugin <https://github.com/SiemaApplications/mongodb-grafana>. Refer to their repository for the plugin usage.
 
 ## Usage
 
