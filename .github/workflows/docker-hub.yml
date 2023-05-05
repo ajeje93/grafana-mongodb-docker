@@ -7,8 +7,6 @@ name: Publish Docker image
 
 on:
   push:
-    branches:
-      - master
   schedule:
     - cron: "0 2 1 * *"
 
@@ -20,6 +18,13 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+
+      - name: Set tag
+        run: echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Is latest?
+        if: env.TAG == 'master'
+        run: echo "TAG=latest" >> $GITHUB_ENV
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -40,4 +45,6 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
-          tags: ajeje93/grafana-mongodb:latest
+          tags: ajeje93/grafana-mongodb:${{ env.TAG }}
+          build-args: |
+            TAG=${{ env.TAG }}

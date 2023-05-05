@@ -1,8 +1,6 @@
 name: Publish Docker image to GitHub Packages
 on:
   push:
-    branches:
-      - master
   schedule:
     - cron: "0 2 1 * *"
 
@@ -21,7 +19,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      
+
+      - name: Set additional environment
+        run: echo "TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
+     
+      - name: Is latest?
+        if: env.TAG == 'master'
+        run: echo "TAG=latest" >> $GITHUB_ENV
+ 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 
@@ -42,4 +47,6 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm/v7,linux/arm64
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.TAG }}
+          build-args: |
+            TAG=${{ env.TAG }}
