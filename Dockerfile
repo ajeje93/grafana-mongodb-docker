@@ -19,6 +19,7 @@ RUN apk update \
     && rm -rf $GF_PATHS_PLUGINS/mongodb-grafana/.git \
     && npm install --silent --prefix $GF_PATHS_PLUGINS/mongodb-grafana \
     && npm cache clean --force --prefix $GF_PATHS_PLUGINS/mongodb-grafana \
+    && npm install pm2 -g \
     && apk del --no-cache git \
     && chmod +x /custom-run.sh \
     && sed -i 's/;allow_loading_unsigned_plugins =.*/allow_loading_unsigned_plugins = grafana-mongodb-opensource-datasource/g' $GF_PATHS_CONFIG
