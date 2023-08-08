@@ -1,8 +1,9 @@
 #!/bin/sh
 
-# runs 2 commands simultaneously:
-npm run server --prefix $GF_PATHS_PLUGINS/mongodb-grafana & # your second application
-P2=$!
-/run.sh & # your first application
+# Starts proxy server with pm2
+pm2 start "npm run server --prefix $GF_PATHS_PLUGINS/mongodb-grafana" --name mongo-proxy
+
+# Starts your application
+/run.sh &
 P1=$!
-wait $P1 $P2
+wait $P1
