@@ -8,7 +8,7 @@
 
 Thank to JamesOsgood for creating the plugin <https://github.com/JamesOsgood/mongodb-grafana>.
 
-Thank to SiemaApplications for upgrading and maintaining the plugin <https://github.com/SiemaApplications/mongodb-grafana>. Refer to their repository for the plugin usage.
+Thank to SiemaApplications for upgrading and maintaining the plugin <https://github.com/SiemaApplications-attic/mongodb-grafana>. Refer to their repository for the plugin usage.
 
 ## Usage
 

@@ -15,7 +15,7 @@ ADD ./custom-run.sh /custom-run.sh
 RUN apk update \
     && apk upgrade \
     && apk add --no-cache git \
-    && git clone https://github.com/SiemaApplications/mongodb-grafana $GF_PATHS_PLUGINS/mongodb-grafana \
+    && git clone https://github.com/SiemaApplications-attic/mongodb-grafana $GF_PATHS_PLUGINS/mongodb-grafana \
     && rm -rf $GF_PATHS_PLUGINS/mongodb-grafana/.git \
     && npm install --silent --prefix $GF_PATHS_PLUGINS/mongodb-grafana \
     && npm cache clean --force --prefix $GF_PATHS_PLUGINS/mongodb-grafana \
