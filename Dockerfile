@@ -1,4 +1,4 @@
-FROM node:16-alpine AS node
+FROM node:lts-alpine AS node
 
 FROM grafana/grafana-oss
 
