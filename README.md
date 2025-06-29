@@ -6,7 +6,7 @@
 
 ## Notes
 
-**The Grafana version has been fixed to 11.6.3 as [Grafana 12 does not support AngularJS plugins anymore](https://grafana.com/blog/2025/04/03/angularjs-support-will-be-removed-in-grafana-12-what-you-need-to-know/), if you need the latest version of consider using the [official plugin](https://grafana.com/grafana/plugins/grafana-mongodb-datasource/).**
+**The Grafana version has been fixed to 11.6.3 as [Grafana 12 does not support AngularJS plugins anymore](https://grafana.com/blog/2025/04/03/angularjs-support-will-be-removed-in-grafana-12-what-you-need-to-know/), if you need the latest version of consider using the [official plugin](https://grafana.com/grafana/plugins/grafana-mongodb-datasource/) or consider switching to <https://github.com/haohanyang/mongodb-datasource>.**
 
 ## Credits
 
