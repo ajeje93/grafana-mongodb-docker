@@ -1,6 +1,6 @@
 FROM node:lts-alpine AS node
 
-FROM grafana/grafana-oss:11.6.3
+FROM grafana/grafana-oss:11.6.5
 
 USER root
 
